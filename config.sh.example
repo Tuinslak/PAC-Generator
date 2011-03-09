@@ -3,4 +3,22 @@
 # aka Tuinslak
 # htpt://yeri.be
 # 2011
-PROXYADDRESS=proxy.domain.tld
+
+# The address of your proxy
+PROXYADDRESS=proxy.domain.tld:8080
+
+# The file to read out the URLs (> check out http://yeri.be/hr)
+LIST=../gfw-url-checker/testResults/cn/results_nok.csv
+
+# File to write to + path
+OUT=/var/www/public/proxy.pac
+
+# Temp file, no need to change
+TMP1=/tmp/_pac.1
+TMP2=/tmp/_pac.2
+TMPPAC=/tmp/_proxy.pac
+
+# Delete old tmp files
+[ -e $TMP1 ] && rm $TMP1
+[ -e $TMP2 ] && rm $TMP2
+[ -e $TMPPAC ] && rm $TMPPAC
