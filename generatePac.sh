@@ -33,14 +33,17 @@ echo "" >> $TMPPAC
 while read a; do {
 	echo "	if (shExpMatch(host, \"$a\"))" >> $TMPPAC
 	echo "		{ return \"PROXY $PROXYADDRESS; DIRECT\" }" >> $TMPPAC
+	echo "	else " >> $TMPPAC
 	echo "" >> $TMPPAC
 } done < $TMP2
 
 echo "" >> $TMPPAC
 
+echo "	{ " >> $TMPPAC
 echo "	// Default: no proxy," >> $TMPPAC
 echo "	// but just in case it fails to resolve directly, use proxy" >> $TMPPAC
 echo "	return \"DIRECT; PROXY $PROXYADDRESS\";" >> $TMPPAC
+echo "	}" >> $TMPPAC
 echo "" >> $TMPPAC
 echo "// End of PAC file" >> $TMPPAC
 echo "}" >> $TMPPAC
