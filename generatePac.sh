@@ -14,7 +14,7 @@ awk '{print $1}' FS="," $LIST > $TMP1
 while read a; do {
 	if [[ $a == www.* ]]; then
 		echo $a >> $TMP2
-		echo $a | sed 's/www.//' >> $TMP2
+		echo $a | sed 's/www./*./' >> $TMP2
 	else
 		echo $a >> $TMP2
 	fi
