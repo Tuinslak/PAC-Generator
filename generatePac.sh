@@ -42,7 +42,7 @@ echo "" >> $TMPPAC
 
 echo "	{ " >> $TMPPAC
 echo "	// Default: no proxy," >> $TMPPAC
-echo "	// but just in case it fails to resolve directly, use proxy" >> $TMPPAC
+#echo "	// but just in case it fails to resolve directly, use proxy" >> $TMPPAC
 echo "	return \"DIRECT\"" >> $TMPPAC
 echo "	}" >> $TMPPAC
 echo "" >> $TMPPAC
