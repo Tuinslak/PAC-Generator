@@ -14,7 +14,8 @@ awk '{print $1}' FS="," $LIST > $TMP1
 while read a; do {
 	if [[ $a == www.* ]]; then
 		echo $a >> $TMP2
-		echo $a | sed 's/www./*./' >> $TMP2
+		# *. doesn't seem to work (anymore? I swear it used to work), so doing *domain instead of *.domain.tld
+		echo $a | sed 's/www./*/' >> $TMP2
 	else
 		echo $a >> $TMP2
 	fi
